@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primaryCOlor: #EAF0F1;
+    --secondaryColor: #2B2B52;
+    --whiteColor: #fff;
+    --redColor: #E44236;
+}
+
+html {
+    background: var(--primaryCOlor);
+    background-size: cover;
+    font-family: 'helvetica neue';
+    text-align: center;
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+}
+
+#clock {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    background: var(--whiteColor);
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.1);
+    border: 8px solid var(--primaryCOlor);
+}
+
+#clock::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--whiteColor);
+    border: 2px solid var(--secondaryColor);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.04);
+}
+
+.clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px);
+    transform: rotate(90deg)
+}
+
+.hand {
+    width: 50%;
+    height: 5px;
+    background: var(--secondaryColor);
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(50deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand::after {
+    content: '';
+    width: 25px;
+    height: 10px;
+    background: var(--whiteColor);
+    position: absolute;
+    margin-left: -63px;
+    margin-top: -4px;
+}
+
+.hand-sec {
+    transform: rotate(0deg);
+    height: 3px;
+    background: var(--redColor);
+}
+
+.hand-sec::after {
+    content: '';
+    width: 15px;
+    height: 10px;
+    background: var(--whiteColor);
+    position: absolute;
+    margin-left: -63px;
+    margin-top: -4px;
+}
+
+.hand-hour {
+    height: 7px;
+    transform: rotate(140deg);
+}
+
+.hand-hour::after {
+    content: '';
+    width: 50px;
+    height: 15px;
+    background: var(--whiteColor);
+    position: absolute;
+    margin-left: -67px;
+    margin-top: -4px;
+}
